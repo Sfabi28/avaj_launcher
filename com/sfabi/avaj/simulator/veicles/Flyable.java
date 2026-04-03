@@ -1,5 +1,7 @@
 package com.sfabi.avaj.simulator.veicles;
 
+import com.sfabi.avaj.simulator.weather.WeatherTower;
+
 public abstract class Flyable {
 	protected WeatherTower weatherTower;
 
