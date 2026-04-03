@@ -1,4 +1,4 @@
-package com.sfabi.avaj.simulator.veicles;
+package com.sfabi.avaj.simulator.vehicles;
 
 import com.sfabi.avaj.simulator.weather.Coordinates;
 

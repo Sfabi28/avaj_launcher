@@ -2,7 +2,7 @@ package com.sfabi.avaj.simulator.weather;
 
 import java.util.List;
 
-import com.sfabi.avaj.simulator.veicles.Flyable;
+import com.sfabi.avaj.simulator.vehicles.Flyable;
 
 public class Tower {
 	private List<Flyable> observers;
