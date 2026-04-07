@@ -1,0 +1,4 @@
+8
+Balloon B1 2 3 20
+Tomato J1 23 32 32
+Helicopter H1 654 33 20

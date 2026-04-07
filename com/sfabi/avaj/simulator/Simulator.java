@@ -21,14 +21,14 @@ public class Simulator {
 		String[] parts = line.trim().split("\\s+");
 
 		if (parts.length != 5) {
-			throw new InvalidLineException("Invalid number of parameters in line");
+			throw new InvalidLineException("Error: invalid number of parameters in line");
 		}
 
 		String type = parts[0];
 		String name = parts[1];
 		
 		if (!type.equals("Balloon") && !type.equals("JetPlane") && !type.equals("Helicopter")) {
-    		throw new InvalidLineException("Invalid type");
+    		throw new InvalidLineException("Error: invalid type of flyable");
 		}
 
 		int longitude;
@@ -39,17 +39,17 @@ public class Simulator {
 			latitude = Integer.parseInt(parts[3]);
 			height = Integer.parseInt(parts[4]);
 		} catch (NumberFormatException e) {
-			throw new InvalidLineException("Coordinates must be integers");
+			throw new InvalidLineException("Error: coordinates must be integers");
 		}
 
 		if (longitude < 0 || latitude < 0 || height < 0) {
-			throw new InvalidLineException("Coordinates out of range");
+			throw new InvalidLineException("Error: coordinates out of range");
 		}
 
 		Coordinates coordinates = new Coordinates(longitude, latitude, height);
 		Flyable flyable = factory.newAircraft(type, name, coordinates);
 		if (flyable == null) {
-			throw new InvalidLineException("Invalid type");
+			throw new InvalidLineException("Error: invalid type");
 		}
 
 		return flyable;
@@ -89,7 +89,7 @@ public class Simulator {
 					Flyable flyable = parseLine(line, factory);
 					flyables.add(flyable);
 				} catch (InvalidLineException e) {
-					System.out.println("Error: flyable must follow the rule: Type + Name + Longitude + Latitude + Height");
+					System.out.println(e.getMessage());
 						return;
 				}
             }
