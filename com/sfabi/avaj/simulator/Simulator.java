@@ -59,7 +59,7 @@ public class Simulator {
 
 		int	numArgs = args.length;
 		if (numArgs != 1) {
-			System.err.println("Error: 1 argument expected");
+			System.out.println("Error: 1 argument expected");
 			return;
 		}
 
@@ -75,11 +75,11 @@ public class Simulator {
 					try {
 						simulations = Integer.parseInt(line.trim());
 						if (simulations <= 0) {
-                    		System.err.println("Error: first line must be a positive integer");
+                    		System.out.println("Error: first line must be a positive integer");
                     	return;
                 		}
 					} catch (NumberFormatException e) {
-						System.err.println("Error: first line must be an integer");
+						System.out.println("Error: first line must be an integer");
 						return;
 					}
 					continue;
@@ -89,13 +89,13 @@ public class Simulator {
 					Flyable flyable = parseLine(line, factory);
 					flyables.add(flyable);
 				} catch (InvalidLineException e) {
-					System.err.println("Error: flyable must follow the rule: Type + Name + Longitude + Latitude + Height");
+					System.out.println("Error: flyable must follow the rule: Type + Name + Longitude + Latitude + Height");
 						return;
 				}
             }
 
 			if (lineNumber == -1) {
-				System.err.println("Error: empty scenario file");
+				System.out.println("Error: empty scenario file");
 				return;
 			}
 
