@@ -1,13 +1,11 @@
 package com.sfabi.avaj.simulator.weather;
 
 public class WeatherTower extends Tower {
-	public String getWeather(Coordinates p_coordinates) {
-		String weather = "test"; // TO CHANGE
-		// TODO 
-		return weather;
-	}
+    public Weather getWeather(Coordinates p_coordinates) {
+        return WeatherProvider.getProvider().getCurrentWeather(p_coordinates);
+    }
 
-	public void changeWeather() {
-		// TODO
-	}
+    public void changeWeather() {
+        conditionChanged();
+    }
 }

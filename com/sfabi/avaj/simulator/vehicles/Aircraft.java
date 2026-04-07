@@ -11,4 +11,9 @@ public abstract class Aircraft extends Flyable {
 		this.name = p_name;
 		this.coordinates = p_coordinates;
 	}
+
+	@Override
+	public String getIdentifier() {
+		return getClass().getSimpleName() + "#" + name + "(" + id + ")";
+	}
 }
